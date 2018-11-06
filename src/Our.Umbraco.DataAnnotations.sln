@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{3B4F9727-3
 	ProjectSection(SolutionItems) = preProject
 		..\.gitattributes = ..\.gitattributes
 		..\.gitignore = ..\.gitignore
+		..\appveyor.yml = ..\appveyor.yml
 		..\LICENSE.md = ..\LICENSE.md
 		..\Package.nuspec = ..\Package.nuspec
 		..\README.md = ..\README.md
