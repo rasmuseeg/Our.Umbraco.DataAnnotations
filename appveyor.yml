@@ -16,3 +16,5 @@ deploy:
     secure: xrveHCc8uVCO8671TOphpNnJpiYEhZzmc8AZjv5qnvt5GqPsCDOgddYednb7EM7M
   on:
     branch: master
+cache:
+  - packages -> **\packages.config

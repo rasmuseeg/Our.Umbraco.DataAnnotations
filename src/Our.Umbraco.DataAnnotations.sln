@@ -5,14 +5,18 @@ VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.DataAnnotations", "Our.Umbraco.DataAnnotations\Our.Umbraco.DataAnnotations.csproj", "{C808941C-0685-4F06-80CE-81AE4E8B82E3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{3B4F9727-3AEB-4113-90F8-8006C575347C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{3B4F9727-3AEB-4113-90F8-8006C575347C}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitattributes = ..\.gitattributes
 		..\.gitignore = ..\.gitignore
-		..\appveyor.yml = ..\appveyor.yml
 		..\LICENSE.md = ..\LICENSE.md
-		..\Package.nuspec = ..\Package.nuspec
 		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{041121B7-58CC-451E-935E-32D5DBF5FEC2}"
+	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
+		..\Our.Umbraco.DataAnnotations.nuspec = ..\Our.Umbraco.DataAnnotations.nuspec
 	EndProjectSection
 EndProject
 Global
