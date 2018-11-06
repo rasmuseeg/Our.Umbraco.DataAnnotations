@@ -1,2 +1,24 @@
-before_build:
-  - nuget restore src\
+version: 1.0.{build}
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+build:
+  publish_nuget: true
+  verbosity: minimal
+deploy:
+- provider: NuGet
+  api_key:
+    secure: xrveHCc8uVCO8671TOphpNnJpiYEhZzmc8AZjv5qnvt5GqPsCDOgddYednb7EM7M
+  on:
+    branch: master
+notifications:
+- provider: Email
+  to:
+  - rasmuseeg@outlook.com
+  subject: 'AppVeyor: Our.Umbraco.DataAnnotations'
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: false
