@@ -1,5 +1,4 @@
-﻿using Umbraco.Core;
-using Umbraco.Web;
+﻿using Umbraco.Web;
 
 namespace Our.Umbraco.DataAnnotations
 {
@@ -21,10 +20,6 @@ namespace Our.Umbraco.DataAnnotations
 
         public static string GetDictionaryValue(string dictionaryKey)
         {
-            //var localizationService = ApplicationContext.Current.Services.LocalizationService;
-            //var item = localizationService.GetDictionaryItemByKey(dictionaryKey);
-            // 
-
             string key = Helper.GetDictionaryValue(dictionaryKey);
             if (!string.IsNullOrEmpty(key))
                 return key;
