@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using UmbracoBootstrap.DataAnnotations;
 
-namespace UmbracoBootstrap.DataAnnotations
+namespace Our.Umbraco.DataAnnotations
 {
     /// <summary>
     /// Specifies that a data field value is required.

@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace UmbracoBootstrap.DataAnnotations
+namespace Our.Umbraco.DataAnnotations
 {
     /// <summary>
     /// Validates the string data using default membership provider.

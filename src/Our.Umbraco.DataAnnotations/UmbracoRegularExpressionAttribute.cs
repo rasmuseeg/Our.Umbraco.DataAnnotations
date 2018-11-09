@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace UmbracoBootstrap.DataAnnotations
+namespace Our.Umbraco.DataAnnotations
 {
     /// <summary>
     /// Specifies that a data field value in ASP.net Dynamic Data must match the specified regular expression.

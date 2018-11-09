@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace UmbracoBootstrap.DataAnnotations
+namespace Our.Umbraco.DataAnnotations
 {
     public class UmbracoDisplayNameAttribute : DisplayNameAttribute
     {

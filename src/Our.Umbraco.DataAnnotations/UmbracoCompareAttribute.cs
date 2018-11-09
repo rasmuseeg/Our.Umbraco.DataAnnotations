@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace UmbracoBootstrap.DataAnnotations
+namespace Our.Umbraco.DataAnnotations
 {
     /// <summary>
     /// Specified that two properties data field value must match.

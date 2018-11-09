@@ -1,7 +1,7 @@
 ﻿using Umbraco.Core;
 using Umbraco.Web;
 
-namespace UmbracoBootstrap.DataAnnotations
+namespace Our.Umbraco.DataAnnotations
 {
     public class UmbracoDictionary
     {

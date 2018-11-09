@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Umbraco.Web.DataAnnotations
+namespace Our.Umbraco.DataAnnotations
 {
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false)]
     public abstract class ConditionalValidationAttribute : ValidationAttribute, IClientValidatable
