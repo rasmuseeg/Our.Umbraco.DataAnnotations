@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Our.Umbraco.DataAnnotations</id>
-    <version>1.0.0</version>
+    <version>$version$</version>
     <authors>rasmuseeg</authors>
     <owners>rasmuseeg</owners>
     <licenseUrl>https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations/blob/master/LICENSE.md</licenseUrl>
