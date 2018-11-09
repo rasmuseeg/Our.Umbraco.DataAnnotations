@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Our.Umbraco.DataAnnotations")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Contains validation attributes to decorate your classes, but using umbraco dictionary as the resource.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Our.Umbraco.DataAnnotations")]

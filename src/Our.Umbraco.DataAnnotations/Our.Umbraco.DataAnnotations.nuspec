@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Our.Umbraco.DataAnnotations</id>
+    <id>$id$</id>
     <version>$version$</version>
     <authors>rasmuseeg</authors>
     <owners>rasmuseeg</owners>
@@ -9,10 +9,10 @@
     <projectUrl>https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/rasmuseeg/Our.Umbraco.DataAnnotations/master/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Contains annotation attributes for form mvc validation using Umbraco Dictionary</description>
+    <description>$description$</description>
     <releaseNotes>First initial release.</releaseNotes>
-    <copyright>Copyright 2018</copyright>
-    <tags>DataAnnotation UmbracoCMS</tags>
+    <copyright>$copyright$</copyright>
+    <tags>DataAnnotation Mvc UmbracoCMS</tags>
     <dependencies>
       <dependency id="UmbracoCms.Core" version="7.0.0" />
     </dependencies>
