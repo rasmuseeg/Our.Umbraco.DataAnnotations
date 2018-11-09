@@ -13,9 +13,9 @@ build:
   publish_nuget: true
   verbosity: minimal
 deploy:
-  release: Our.Umbraco.DataAnnotations-v$(appveyor_build_version)
-  description: 'Release description'
-  provider: GitHub
+  - provider: GitHub
+    release: Our.Umbraco.DataAnnotations-v$(appveyor_build_version)
+    description: 'Release description'
     auth_token:
       secure: RtBYlXMtdRw5+I8HlXeQxuKUJtoMCjH9inU8Gq6/JUQNB/jSAjhE+W913NR6yHQz
     artifact: /.*\.nupkg/          # upload all NuGet packages to release assets
@@ -31,5 +31,3 @@ deploy:
     on:
       branch: master
       appveyor_repo_tag: true        # deploy on tag push only
-
-  
