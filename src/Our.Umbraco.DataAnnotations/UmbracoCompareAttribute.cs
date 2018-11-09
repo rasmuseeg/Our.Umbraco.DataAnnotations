@@ -28,21 +28,7 @@ namespace Our.Umbraco.DataAnnotations
                 }
             }
 
-            //string otherPropertyId = BuildDependentPropertyId(metadata, context as ViewContext); // This is handled client-side
-
             yield return new ModelClientValidationEqualToRule(FormatErrorMessage(metadata.GetDisplayName()), OtherProperty);
         }
-
-        //private string BuildDependentPropertyId(ModelMetadata metadata, ViewContext viewContext)
-        //{
-        //    string depProp = viewContext.ViewData.TemplateInfo.GetFullHtmlFieldId(this.OtherProperty);
-        //    // This will have the name of the current field appended to the beginning, because the TemplateInfo's context has had this fieldname appended to it.
-        //    var thisField = metadata.PropertyName + "_";
-        //    if (depProp.StartsWith(thisField))
-        //    {
-        //        depProp = depProp.Substring(thisField.Length);
-        //    }
-        //    return depProp;
-        //}
     }
 }
