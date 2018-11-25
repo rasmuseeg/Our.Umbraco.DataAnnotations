@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("Our.Umbraco.DataAnnotations")]
 [assembly: AssemblyDescription("Contains validation attributes to decorate your classes, but using umbraco dictionary as the resource.")]
-[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyConfiguration("release")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Our.Umbraco.DataAnnotations")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]

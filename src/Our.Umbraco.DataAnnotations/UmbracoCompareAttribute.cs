@@ -8,8 +8,8 @@ namespace Our.Umbraco.DataAnnotations
     /// </summary>
     public class UmbracoCompareAttribute : System.ComponentModel.DataAnnotations.CompareAttribute, IClientValidatable
     {
-        public new string ErrorMessageString { get; internal set; }
-        public new string OtherPropertyDisplayName { get; internal set; }
+        public new string ErrorMessageString { get; set; }
+        public new string OtherPropertyDisplayName { get; set; }
 
         public UmbracoCompareAttribute(string otherProperty)
             : base(otherProperty)
