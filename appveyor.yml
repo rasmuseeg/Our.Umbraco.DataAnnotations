@@ -1,4 +1,12 @@
 version: '1.1.31.{build}'
+pull_requests:
+  do_not_increment_build_number: true
+branches:
+  only:
+  - master
+  - develop
+  - dev-v1
+image: Visual Studio 2017
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
@@ -6,12 +14,13 @@ assembly_info:
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
 cache:
-  - packages -> src\Our.Umbraco.DataAnnotations\packages.config
+  - packages -> **\packages.config
 before_build:
-  - nuget restore src\
+  - cmd: nuget restore src\
 build:
-  publish_nuget: true
   verbosity: minimal
+after_build:
+- cmd: nuget pack src\Our.Umbraco.DataAnnotations\Our.Umbraco.DataAnnotations.csproj
 deploy:
   - provider: GitHub
     release: Our.Umbraco.DataAnnotations-v$(appveyor_build_version)

@@ -2,6 +2,7 @@
 |:--------|:-------|
 | master  | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/master?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/master) |
 | develop | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/develop?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/develop) |
+| dev-v1  | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/master?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/master)
 
 # Our.Umbraco.DataAnotations
 Contains model validation attributes to for your properties, by using umbraco dictionary as the resource for error messages.
