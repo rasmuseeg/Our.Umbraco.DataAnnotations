@@ -1,5 +1,7 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/master?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/master)
-[![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/develop?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/develop)
+| Branch  | Status | 
+|:--------|:-------|
+| master  | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/master?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/master) |
+| develop | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/develop?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/develop) |
 
 # Our.Umbraco.DataAnotations
 Contains model validation attributes to for your properties, by using umbraco dictionary as the resource for error messages.
@@ -17,9 +19,33 @@ PM > Install-Package Our.Umbraco.DataAnnotations
 Include the following scripts in your layout .cshtml file
 
 ```
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+<body>
+    @RenderBody()
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+</body>
 ```
+
+or using ClientDependency like so:
+```
+@using ClientDendency.Core.Mvc;
+
+...
+
+<body>
+    @RenderBody()
+
+    @{
+        Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.18.0/jquery.validate.min.js")
+        Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js")
+    }
+    @Html.RenderJsHere()
+</body>
+
+```
+
+The above is just samples, you may use any method you like to include the scripts.
 
 Then on each page with a form enable validation
 ```
