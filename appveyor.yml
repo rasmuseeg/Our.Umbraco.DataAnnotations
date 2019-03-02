@@ -3,9 +3,10 @@ pull_requests:
   do_not_increment_build_number: true
 branches:
   only:
-  - master
-  - develop
-  - dev-v1
+  - master-v7
+  - master-v8
+  - dev-v7
+  - dev-v8
 image: Visual Studio 2017
 assembly_info:
   patch: true
@@ -16,27 +17,26 @@ assembly_info:
 cache:
   - packages -> **\packages.config
 before_build:
-  - cmd: nuget restore src\
+  - ps: .\scripts\restore.ps1
 build:
   verbosity: minimal
 after_build:
-- cmd: nuget pack src\Our.Umbraco.DataAnnotations\Our.Umbraco.DataAnnotations.csproj
+- ps: .\scripts\pack.ps1
 deploy:
   - provider: GitHub
-    release: Our.Umbraco.DataAnnotations-v$(appveyor_build_version)
-    description: 'Our.Umbraco.DataAnnotations v$(appveyor_build_version) has been released.'
+    release: ralease-$(appveyor_build_version)
     auth_token:
       secure: RtBYlXMtdRw5+I8HlXeQxuKUJtoMCjH9inU8Gq6/JUQNB/jSAjhE+W913NR6yHQz
     artifact: /.*\.nupkg/            # upload all NuGet packages to release assets
     draft: false
     prerelease: false
-    tag: 'v$(appveyor_build_version)'
+    tag: 'release-v$(appveyor_build_version)'
     on:
-      branch: master                 # release from master branch only
+      branch: /master([-]v[0-9])?/   # release from master branch only
 
   - provider: NuGet
     api_key:
       secure: xrveHCc8uVCO8671TOphpNnJpiYEhZzmc8AZjv5qnvt5GqPsCDOgddYednb7EM7M
-    tag: 'v$(appveyor_build_version)'
+    tag: 'release-v$(appveyor_build_version)'
     on:
-      branch: master
+      branch: /master([-]v[0-9])?/

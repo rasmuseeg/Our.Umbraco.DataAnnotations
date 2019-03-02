@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using Umbraco.Core;
+using System.Linq;
+using Umbraco.Core.Services;
+using Umbraco.Core.Models;
 using Umbraco.Core.Logging;
 using Umbraco.Core.Persistence;
 using Umbraco.Core.Persistence.Migrations;
@@ -19,7 +22,7 @@ namespace Our.Umbraco.DataAnnotations
             _schemaHelper = new DatabaseSchemaHelper(_database, logger, sqlSyntax);
         }
 
-        private readonly Dictionary<string, string> dictionaryItems = new Dictionary<string, string>() {
+        private readonly Dictionary<string, string> defaultDictionaryItems = new Dictionary<string, string>() {
             { "RequiredError", "{0} is required." },
             { "EqualToError", "The '{0}' and {1} fields must match." },
             { "EmailError", "Doesn't look like a valid e-mail." },
@@ -36,18 +39,22 @@ namespace Our.Umbraco.DataAnnotations
 
         public override void Up()
         {
-            var localizationService = ApplicationContext.Current.Services.LocalizationService;
-            var language = localizationService.GetLanguageByCultureCode("en-GB");
+            ILocalizationService localizationService = ApplicationContext.Current.Services.LocalizationService;
+            ILanguage language = localizationService.GetAllLanguages().FirstOrDefault(x=> x.IsoCode == "en-GB" || x.IsoCode == "en-US");
             if (language == null)
+            {
                 return;
+            }
 
-            var dataAnnotations = localizationService.GetDictionaryItemByKey("DataAnnotions");
+            IDictionaryItem dataAnnotations = localizationService.GetDictionaryItemByKey("DataAnnotions");
             if (dataAnnotations != null)
+            {
                 return;
+            }
 
             dataAnnotations = localizationService.CreateDictionaryItemWithIdentity("DataAnnotations", null);
 
-            foreach (var item in dictionaryItems)
+            foreach (var item in defaultDictionaryItems)
             {
                 if (localizationService.DictionaryItemExists(item.Key))
                     continue;
