@@ -8,6 +8,7 @@ branches:
   - dev-v7
   - dev-v8
 image: Visual Studio 2017
+configuration: Release
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'

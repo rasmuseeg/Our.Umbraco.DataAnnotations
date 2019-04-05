@@ -16,6 +16,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{041121B7-58CC-451E-935E-32D5DBF5FEC2}"
 	ProjectSection(SolutionItems) = preProject
 		..\appveyor.yml = ..\appveyor.yml
+		..\scripts\pack.ps1 = ..\scripts\pack.ps1
+		..\scripts\restore.ps1 = ..\scripts\restore.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{00F78ED9-4AEB-41A2-8B2D-1F64EA8A57AE}"
