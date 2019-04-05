@@ -23,7 +23,7 @@ namespace Our.Umbraco.DataAnnotations
             string key = Helper.GetDictionaryValue(dictionaryKey);
             if (!string.IsNullOrEmpty(key))
                 return key;
-            return dictionaryKey; // Fallback with the key name
+            return string.Format(key, Config.DictionaryFallbackFormat); // Fallback with the key name
         }
     }
 }

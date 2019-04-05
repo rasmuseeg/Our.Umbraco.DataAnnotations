@@ -17,11 +17,11 @@ assembly_info:
 cache:
   - packages -> **\packages.config
 before_build:
-- ps: scripts\restore.ps1
+- ps: .\scripts\restore.ps1
 build:
   verbosity: minimal
 after_build:
-- ps: scripts\pack.ps1
+- ps: .\scripts\pack.ps1
 deploy:
   - provider: GitHub
     release: ralease-$(appveyor_build_version)

@@ -1,11 +1,12 @@
 | Branch  | Status | 
 |:--------|:-------|
-| master  | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/master?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/master) |
-| develop | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/develop?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/develop) |
-| dev-v1  | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/master?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/master)
+| master-v7  | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/master-v7?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/master-v7) |
+| dev-v7 | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/dev-v7?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/dev-v7) |
 
 # Our.Umbraco.DataAnotations
 Contains model validation attributes to for your properties, by using umbraco dictionary as the resource for error messages.
+
+This branch is for Umbraco 7. [Looking for Umbraco 8?](https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations/tree/dev-v8)
 
 ## Installation
 During installation the keys will be created nested below `DataAnnotions` dictionary key.
@@ -15,6 +16,9 @@ NuGet:
 PM > Install-Package Our.Umbraco.DataAnnotations
 ```
 
+Build the project and start website.
+On first run, a migration will check foreach dictionary key used in the application and added it to umbraco dictionary items.
+Only default `en-US` keys and translations are added.
 
 ## Client Validation
 Include the following scripts in your layout .cshtml file
@@ -202,7 +206,7 @@ property string Message { get; set; }
 
 Example:
 ```C#
-[MustBeTrue]
+[UmbracoMustBeTrue]
 property boool Consent { get; set; }
 ```
 
@@ -226,7 +230,7 @@ There are no default keys for this attribute, since each regex validation is uni
 
 Example:
 ```C#
-[UmbracoRegularExpression()]
+[UmbracoRegularExpression("^([0-9]{4})$", ResourceName="InvalidDKZipCode")]
 property string Password { get; set; }
 ```
 
