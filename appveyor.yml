@@ -21,7 +21,7 @@ before_build:
 - ps: '& ".\scripts\restore.ps1"'
 build:
   verbosity: minimal
-after_build:
+before_deploy:
 - ps: '& ".\scripts\pack.ps1"'
 deploy:
   - provider: GitHub
