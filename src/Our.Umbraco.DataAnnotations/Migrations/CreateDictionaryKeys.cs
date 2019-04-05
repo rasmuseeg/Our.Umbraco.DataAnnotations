@@ -10,7 +10,7 @@ using Umbraco.Core.Persistence.SqlSyntax;
 
 namespace Our.Umbraco.DataAnnotations
 {
-    [Migration("1.2.30", 1, Constants.PluginName)]
+    [Migration("1.2.0", 1, Constants.PluginName)]
     public class CreateNotesTable : MigrationBase
     {
         private readonly UmbracoDatabase _database = ApplicationContext.Current.DatabaseContext.Database;
@@ -40,7 +40,10 @@ namespace Our.Umbraco.DataAnnotations
         public override void Up()
         {
             ILocalizationService localizationService = ApplicationContext.Current.Services.LocalizationService;
-            ILanguage language = localizationService.GetAllLanguages().FirstOrDefault(x=> x.IsoCode == "en-GB" || x.IsoCode == "en-US");
+            IEnumerable<ILanguage> languages = localizationService.GetAllLanguages();
+            ILanguage language = languages.FirstOrDefault(x=> x.IsoCode == "en-GB" || x.IsoCode == "en-US")
+                ?? languages.FirstOrDefault();
+
             if (language == null)
             {
                 return;

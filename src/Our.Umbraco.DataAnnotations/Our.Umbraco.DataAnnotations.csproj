@@ -68,8 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Web.config.uninstall.xdt" />
-    <None Include="Web.config.install.xdt" />
+    <Content Include="Web.config.uninstall.xdt" />
+    <Content Include="Web.config.install.xdt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Our.Umbraco.DataAnnotations.nuspec" />

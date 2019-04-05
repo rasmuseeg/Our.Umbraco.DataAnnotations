@@ -1,6 +1,4 @@
 version: '1.1.31.{build}'
-pull_requests:
-  do_not_increment_build_number: true
 branches:
   only:
   - master-v7
@@ -25,19 +23,19 @@ after_build:
 - ps: '& ".\scripts\pack.ps1"'
 deploy:
   - provider: GitHub
-    release: ralease-$(appveyor_build_version)
+    release: v$(appveyor_build_version)
     auth_token:
       secure: RtBYlXMtdRw5+I8HlXeQxuKUJtoMCjH9inU8Gq6/JUQNB/jSAjhE+W913NR6yHQz
     artifact: /.*\.nupkg/            # upload all NuGet packages to release assets
     draft: false
     prerelease: false
-    tag: 'release-v$(appveyor_build_version)'
+    tag: 'v$(appveyor_build_version)'
     on:
       branch: /master([-]v[0-9])?/   # release from master branch only
 
   - provider: NuGet
     api_key:
       secure: xrveHCc8uVCO8671TOphpNnJpiYEhZzmc8AZjv5qnvt5GqPsCDOgddYednb7EM7M
-    tag: 'release-v$(appveyor_build_version)'
+    tag: 'v$(appveyor_build_version)'
     on:
       branch: /master([-]v[0-9])?/
