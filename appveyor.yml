@@ -23,12 +23,13 @@ after_build:
 - ps: '& ".\build\pack.ps1"'
 deploy:
   - provider: GitHub
-    release: $(appveyor_build_version)
+    release: $(APPVEYOR_REPO_TAG_NAME)
     auth_token:
       secure: RtBYlXMtdRw5+I8HlXeQxuKUJtoMCjH9inU8Gq6/JUQNB/jSAjhE+W913NR6yHQz
     artifact: /.*/            # upload all NuGet packages to release assets
     draft: false
     prerelease: false
+    tag: $(APPVEYOR_REPO_TAG_NAME)
     on:
       branch: /master([-]v[0-9])?/   # release from master branch only
       APPVEYOR_REPO_TAG: true
