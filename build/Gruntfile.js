@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                 src: [
                     releaseFilesDir + '**/*.*'
                 ],
-                dest: releaseDir + 'zip/' + pkg.name + '.v' + pkg.version + '.zip'
+                dest: releaseDir + 'zip/' + pkg.name + '.' + pkg.version + '.zip'
             }
         },
         umbracoPackage: {
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
                     author: pkg.author.name,
                     authorUrl: pkg.author.url,
                     readme: pkg.readme,
-                    outputName: pkg.name + '.v' + pkg.version + '.zip'
+                    outputName: pkg.name + '.' + pkg.version + '.zip'
                 }
             }
         },
