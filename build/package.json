@@ -1,0 +1,25 @@
+{
+  "name": "Our.Umbraco.DataAnnotations",
+  "version": "1.2.1",
+  "url": "https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations/blob/master-v7/LICENSE.md"
+    }
+  ],
+  "author": {
+    "name": "Rasmus Moeller",
+    "url": "https://rasmus-moller.dk/"
+  },
+  "readme": "Collection of validation attributes for your models, using umbraco dictionary as the resource.",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-nuget": "^0.3.1",
+    "grunt-umbraco-package": "1.0.0",
+    "grunt-zip": "^0.18.1",
+    "grunt-nuget-pack": "^0.0.6"
+  }
+}
