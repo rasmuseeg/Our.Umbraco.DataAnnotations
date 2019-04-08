@@ -1,11 +1,15 @@
+$buildPath = ".\build\"
+
 # Run Grunt
-grunt --base build
+Set-Location $buildPath;
+yarn
+grunt
 
 # Push all newly created .nupkg files as Appveyor artifacts for later deployment.
-Get-ChildItem "$releasePath\nuget\*.nupkg" | ForEach-Object { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+Get-ChildItem ".\nuget\*.nupkg" | ForEach-Object { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
 # Push umbraco package
-Get-ChildItem "$releasePath\umbraco\*.zip" | ForEach-Object { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+Get-ChildItem ".\umbraco\*.zip" | ForEach-Object { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
 # Push zip
-Get-ChildItem "$releasePath\zip\*.zip" | ForEach-Object { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+Get-ChildItem ".\zip\*.zip" | ForEach-Object { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
