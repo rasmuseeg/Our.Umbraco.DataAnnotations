@@ -4,6 +4,7 @@ Write-Host "build path: $buildPath";
 # Run Grunt
 Set-Location $buildPath;
 yarn
+yarn global add grunt-cli
 grunt
 
 # Push all newly created .nupkg files as Appveyor artifacts for later deployment.
