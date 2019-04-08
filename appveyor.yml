@@ -23,10 +23,10 @@ after_build:
 - ps: '& ".\build\pack.ps1"'
 deploy:
   - provider: GitHub
-    release: v$(appveyor_build_version)
+    release: $(appveyor_build_version)
     auth_token:
       secure: RtBYlXMtdRw5+I8HlXeQxuKUJtoMCjH9inU8Gq6/JUQNB/jSAjhE+W913NR6yHQz
-    artifact: /.*\.nupkg/            # upload all NuGet packages to release assets
+    artifact: /.*/            # upload all NuGet packages to release assets
     draft: false
     prerelease: false
     on:
