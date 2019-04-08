@@ -14,4 +14,4 @@ Get-ChildItem ".\release\nuget\*.nupkg" | ForEach-Object { Push-AppveyorArtifact
 Get-ChildItem ".\release\umbraco\*.zip" | ForEach-Object { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
 # Push zip
-Get-ChildItem ".\release\zip\*.zip" | ForEach-Object { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+# Get-ChildItem ".\release\zip\*.zip" | ForEach-Object { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
