@@ -12,11 +12,11 @@ namespace Our.Umbraco.DataAnnotations
         public UmbracoMaxLengthAttribute(int length)
             : base(length)
         {
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue("MaxLengthError");
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue("MaxLengthError");
             yield return
                 new ModelClientValidationMaxLengthRule(FormatErrorMessage(metadata.GetDisplayName()), Length);
         }

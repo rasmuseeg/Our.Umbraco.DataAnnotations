@@ -9,13 +9,18 @@ namespace Our.Umbraco.DataAnnotations
     /// </summary>
     public class UmbracoRegularExpressionAttribute : RegularExpressionAttribute, IClientValidatable
     {
-        public new string ErrorMessageString { get; internal set; }
-        public string ResourceName { get; set; } = "RegexError";
+
+        public UmbracoRegularExpressionAttribute(string pattern, string dictionaryKey)
+            : base(pattern)
+        {
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue(dictionaryKey);
+
+        }
 
         public UmbracoRegularExpressionAttribute(string pattern)
             : base(pattern)
         {
-            ErrorMessageString = UmbracoDictionary.GetDictionaryValue(ResourceName);
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue("RegexError");
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
