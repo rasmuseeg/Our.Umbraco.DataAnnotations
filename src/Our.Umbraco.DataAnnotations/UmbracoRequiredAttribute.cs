@@ -9,16 +9,23 @@ namespace Our.Umbraco.DataAnnotations
     /// </summary>
     public class UmbracoRequiredAttribute : RequiredAttribute, IClientValidatable
     {
-        public string ResourceName { get; set; } = "RequiredError";
+
+        public UmbracoRequiredAttribute(string dictionaryKey) :
+            base()
+        {
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue(dictionaryKey);
+
+        }
 
         public UmbracoRequiredAttribute() :
             base()
         {
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue("RequiredError");
+
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue(ResourceName);
             yield return new ModelClientValidationRequiredRule(FormatErrorMessage(metadata.GetDisplayName()));
         }
     }
