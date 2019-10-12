@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Our.Umbraco.DataAnnotations.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
@@ -6,11 +7,13 @@ using System.Web.Mvc;
 namespace Our.Umbraco.DataAnnotations
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
-    public class UmbracoMustBeTrueAttribute : ValidationAttribute, IClientValidatable
+    public sealed class UmbracoMustBeTrueAttribute : ValidationAttribute, IClientValidatable, IUmbracoValidationAttribute
     {
+        public string DictionaryKey { get; set; } = "MustBeTrueError";
+
         public UmbracoMustBeTrueAttribute()
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue("MustBeTrueError");
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
         }
 
         public override bool IsValid(object value)

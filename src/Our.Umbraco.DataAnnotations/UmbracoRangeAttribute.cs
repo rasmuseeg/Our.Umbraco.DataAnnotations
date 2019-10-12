@@ -1,21 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using Our.Umbraco.DataAnnotations.Interfaces;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 namespace Our.Umbraco.DataAnnotations
 {
-    public class UmbracoRangeAttribute : RangeAttribute, IClientValidatable
+    public sealed class UmbracoRangeAttribute : RangeAttribute, IClientValidatable, IUmbracoValidationAttribute
     {
+        public string DictionaryKey { get; set; } = "RangeError";
+
         public UmbracoRangeAttribute(int minimum, int maximum) 
             : base(minimum, maximum)
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue("RangeError");
-        }
-
-        public UmbracoRangeAttribute(int minimum, int maximum, string dictionaryKey)
-            : base(minimum, maximum)
-        {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue(dictionaryKey);
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)

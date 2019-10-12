@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Our.Umbraco.DataAnnotations.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
@@ -13,18 +14,22 @@ namespace Our.Umbraco.DataAnnotations
     /// Validates the string data using default membership provider.
     /// </summary>
     /// https://referencesource.microsoft.com/#System.Web/Security/MembershipPasswordAttribute.cs,19c2a804c4a5eaf5,references
-    public class UmbracoPasswordAttribute : MembershipPasswordAttribute, IClientValidatable
+    public sealed class UmbracoPasswordAttribute : MembershipPasswordAttribute, IClientValidatable, IUmbracoValidationAttribute
     {
+        public string DictionaryKey { get; set; } = "PasswordError";
+        public string MinPasswordLengthDictionaryKey { get; set; } = "MinPasswordLengthError";
+        public string MinNonAlphanumericCharactersDictionaryKey { get; set; } = "MinPasswordLengthError";
+        public string PasswordStrengthDictionaryKey { get; set; } = "MinPasswordLengthError";
         public int? PasswordStrengthRegexTimeout { get; set; }
         public string ValidationName = "password";
 
         public UmbracoPasswordAttribute()
             : base()
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue("PasswordError");
-            MinPasswordLengthError = UmbracoDictionary.GetDictionaryValue("MinPasswordLengthError");
-            MinNonAlphanumericCharactersError = UmbracoDictionary.GetDictionaryValue("MinNonAlphanumericCharactersError");
-            PasswordStrengthError = UmbracoDictionary.GetDictionaryValue("PasswordStrengthError");
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
+            MinPasswordLengthError = UmbracoDictionary.GetDictionaryValue(MinPasswordLengthDictionaryKey);
+            MinNonAlphanumericCharactersError = UmbracoDictionary.GetDictionaryValue(MinNonAlphanumericCharactersDictionaryKey);
+            PasswordStrengthError = UmbracoDictionary.GetDictionaryValue(PasswordStrengthDictionaryKey);
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)

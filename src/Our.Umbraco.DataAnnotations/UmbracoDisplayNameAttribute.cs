@@ -1,22 +1,23 @@
-﻿using System.ComponentModel;
+﻿using Our.Umbraco.DataAnnotations.Interfaces;
+using System.ComponentModel;
 
 namespace Our.Umbraco.DataAnnotations
 {
-    public class UmbracoDisplayNameAttribute : DisplayNameAttribute
+    public sealed class UmbracoDisplayNameAttribute : DisplayNameAttribute, IUmbracoValidationAttribute
     {
-        private readonly string dictionaryKey;
+        public string DictionaryKey { get; set; }
 
         public UmbracoDisplayNameAttribute(string dictionaryKey)
             : base()
         {
-            this.dictionaryKey = dictionaryKey;
+            DictionaryKey = dictionaryKey;
         }
 
         public override string DisplayName
         {
             get
             {
-                return UmbracoDictionary.GetDictionaryValue(dictionaryKey);
+                return UmbracoDictionary.GetDictionaryValue(DictionaryKey);
             }
         }
     }

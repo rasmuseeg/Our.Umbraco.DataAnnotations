@@ -221,6 +221,7 @@
   <ItemGroup>
     <Compile Include="Conditionals\ConditionalValidationAttributes.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Interfaces\IUmbracoValidationAttribute.cs" />
     <Compile Include="Migrations\CreateDictionaryKeys.cs" />
     <Compile Include="Migrations\Runner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
