@@ -21,7 +21,6 @@ deploy:
     artifact: /.*\.nupkg/            # upload all NuGet packages to release assets
     draft: false
     prerelease: false
-    tag: 'v$(appveyor_build_version)'
     on:
       branch: master                 # release from master branch only
 
