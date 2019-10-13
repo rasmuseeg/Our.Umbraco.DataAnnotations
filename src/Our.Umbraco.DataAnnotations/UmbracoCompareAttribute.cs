@@ -16,11 +16,12 @@ namespace Our.Umbraco.DataAnnotations
         public UmbracoCompareAttribute(string otherProperty)
             : base(otherProperty)
         {
-            ErrorMessageString = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
+            ErrorMessageString = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
+
             if (metadata.ContainerType != null)
             {
                 if (OtherPropertyDisplayName == null)

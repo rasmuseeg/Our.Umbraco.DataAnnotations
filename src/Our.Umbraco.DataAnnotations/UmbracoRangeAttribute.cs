@@ -12,11 +12,12 @@ namespace Our.Umbraco.DataAnnotations
         public UmbracoRangeAttribute(int minimum, int maximum) 
             : base(minimum, maximum)
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
+
             yield return
                 new ModelClientValidationRangeRule(FormatErrorMessage(metadata.GetDisplayName()), Minimum, Maximum);
         }

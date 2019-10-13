@@ -15,11 +15,12 @@ namespace Our.Umbraco.DataAnnotations
         public UmbracoMinLengthAttribute(int length)
             : base(length)
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
+
             yield return
                 new ModelClientValidationMinLengthRule(FormatErrorMessage(metadata.GetDisplayName()), Length);
         }
