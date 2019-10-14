@@ -15,11 +15,11 @@ namespace Our.Umbraco.DataAnnotations
         public UmbracoRequiredAttribute() 
             : base()
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
             yield return new ModelClientValidationRequiredRule(FormatErrorMessage(metadata.GetDisplayName()));
         }
     }
