@@ -155,10 +155,7 @@ public string Username { get; set; }
 
 Example:
 ```c#
-[UmbracoRequired]
-[UmbracoEmailAddress]
-[UmbracoDisplayName(nameof(Email))]
-[DataType(DataType.EmailAddress)]
+[UmbracoEmailAddress(DictionaryKey = "MyCustomKey")]
 public string Email { get; set; }
 ```
 
@@ -170,7 +167,7 @@ public string Email { get; set; }
 
 Example:
 ```C#
-[UmbracoMinLength(20)]
+[UmbracoMinLength(20, DictionaryKey = "MyCustomKey")]
 property string MyProperty { get; set; }
 ```
 
@@ -182,7 +179,7 @@ property string MyProperty { get; set; }
 
 Example:
 ```C#
-[UmbracoMaxLength(120)]
+[UmbracoMaxLength(120, DictionaryKey = "MyCustomKey")]
 property string MyProperty { get; set; }
 ```
 
@@ -195,7 +192,7 @@ property string MyProperty { get; set; }
 
 Example:
 ```C#
-[UmbracoStringLength(120, MinimumLength = 30)]
+[UmbracoStringLength(120, MinimumLength = 30, DictionaryKey = "MyCustomKey")]
 property string Message { get; set; }
 ```
 
@@ -206,7 +203,7 @@ property string Message { get; set; }
 
 Example:
 ```C#
-[UmbracoMustBeTrue]
+[UmbracoMustBeTrue(DictionaryKey = "MyCustomKey")]
 property boool Consent { get; set; }
 ```
 
@@ -220,7 +217,11 @@ property boool Consent { get; set; }
 
 Example:
 ```C#
-[UmbracoPassword]
+[UmbracoPassword(DictionaryKey = "CustomPasswordKey", 
+    MinPasswordLengthDictionaryKey = "CustomMinPasswordLengthKey", 
+    MinNonAlphanumericCharactersDictionaryKey = "MyCustomMinNonAlphanumericCharactersKey", 
+    PasswordStrengthDictionaryKey = "MyCustomPasswordStrengtKey",
+    PasswordStrengthRegexTimeout = 360)]
 property string Password { get; set; }
 ```
 
@@ -230,7 +231,7 @@ There are no default keys for this attribute, since each regex validation is uni
 
 Example:
 ```C#
-[UmbracoRegularExpression("^([0-9]{4})$", ResourceName="InvalidDKZipCode")]
+[UmbracoRegularExpression("^([0-9]{4})$", DictionaryKey = "MyCustomRegexKey")]
 property string Password { get; set; }
 ```
 
@@ -238,6 +239,17 @@ property string Password { get; set; }
 
 Example:
 ```C#
-[UmbracoRequired]
+[UmbracoRequired(DictionaryKey = "MyCustomRequiredKey")]
 property string MyProperty { get; set; }
 ```
+
+## Custom dictionary keys
+Each Attribute, has a public property `DictionaryKey` which can be set like this:
+```
+[UmbracoReguired(DictionaryKey = "MyCustomKey")]
+[UmbracoRegularExpression(DictionaryKey = "MyCustomRegexKey")]
+[UmbracoRegularExpression(DictionaryKey = "MyCustomRegexKey")]
+property string MyProperty { get; set; }
+```
+
+Not setting a custom key, will fallback to the default dictionary key.

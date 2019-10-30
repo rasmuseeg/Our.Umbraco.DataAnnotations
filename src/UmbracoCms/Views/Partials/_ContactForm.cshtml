@@ -1,0 +1,11 @@
+﻿@inherits UmbracoViewPage<UmbracoCms.Models.ContactFormModel>
+@using UmbracoCms.Controllers;
+@{ 
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+
+@using (Html.BeginUmbracoForm<ContactController>("HandleContactForm", FormMethod.Post))
+{
+
+}

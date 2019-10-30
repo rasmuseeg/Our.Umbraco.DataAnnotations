@@ -2,7 +2,7 @@
 
 namespace Our.Umbraco.DataAnnotations
 {
-    public class UmbracoDictionary
+    public sealed class UmbracoDictionary
     {
         private static UmbracoHelper _helper;
 
