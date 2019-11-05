@@ -8,6 +8,13 @@
     <Copyright />
     <Description>Contains validation attributes to decorate your classes, but using umbraco dictionary as the resource.</Description>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Company>Bitflipping.net</Company>
+    <Authors>rasmuseeg;bitflipping</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>DataAnnotation Mvc UmbracoCMS Validation Localization Globalize</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/rasmuseeg/Our.Umbraco.DataAnnotations/master-v8/icon.png</PackageIconUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">

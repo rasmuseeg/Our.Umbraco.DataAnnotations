@@ -12,7 +12,7 @@ namespace Our.Umbraco.DataAnnotations
         {
             get
             {
-                if(_dictionaryFallbackFormat == null)
+                if (_dictionaryFallbackFormat == null)
                 {
                     string appSettingKey = Constants.AppSettings.Prefix + "." + Constants.AppSettings.DictionaryKeyFallback;
                     _dictionaryFallbackFormat = System.Configuration.ConfigurationManager.AppSettings[appSettingKey] as string

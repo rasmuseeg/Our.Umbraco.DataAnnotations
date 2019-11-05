@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
-using Umbraco.Core;
 using System.Linq;
-using Umbraco.Core.Services;
-using Umbraco.Core.Models;
 using Umbraco.Core.Logging;
+using Umbraco.Core.Models;
 using Umbraco.Core.Persistence;
-using Umbraco.Core.Persistence.Migrations;
 using Umbraco.Core.Persistence.SqlSyntax;
+using Umbraco.Core.Services;
 
 namespace Our.Umbraco.DataAnnotations
 {
@@ -41,7 +39,7 @@ namespace Our.Umbraco.DataAnnotations
         {
             ILocalizationService localizationService = ApplicationContext.Current.Services.LocalizationService;
             IEnumerable<ILanguage> languages = localizationService.GetAllLanguages();
-            ILanguage language = languages.FirstOrDefault(x=> x.IsoCode == "en-GB" || x.IsoCode == "en-US")
+            ILanguage language = languages.FirstOrDefault(x => x.IsoCode == "en-GB" || x.IsoCode == "en-US")
                 ?? languages.FirstOrDefault();
 
             if (language == null)
@@ -60,7 +58,9 @@ namespace Our.Umbraco.DataAnnotations
             foreach (var item in defaultDictionaryItems)
             {
                 if (localizationService.DictionaryItemExists(item.Key))
+                {
                     continue;
+                }
 
                 localizationService.CreateDictionaryItemWithIdentity(item.Key, dataAnnotations.Key, item.Value);
             }

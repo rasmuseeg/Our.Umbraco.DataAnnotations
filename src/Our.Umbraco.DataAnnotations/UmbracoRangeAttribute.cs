@@ -9,7 +9,7 @@ namespace Our.Umbraco.DataAnnotations
     {
         public string DictionaryKey { get; set; } = "RangeError";
 
-        public UmbracoRangeAttribute(int minimum, int maximum) 
+        public UmbracoRangeAttribute(int minimum, int maximum)
             : base(minimum, maximum)
         {
         }

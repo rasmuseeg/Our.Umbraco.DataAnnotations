@@ -12,7 +12,7 @@ namespace Our.Umbraco.DataAnnotations
     {
         public string DictionaryKey { get; set; } = "RequiredError";
 
-        public UmbracoRequiredAttribute() 
+        public UmbracoRequiredAttribute()
             : base()
         {
         }

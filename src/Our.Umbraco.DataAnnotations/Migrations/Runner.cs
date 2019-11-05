@@ -1,13 +1,8 @@
 ﻿using Semver;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Umbraco.Core;
 using Umbraco.Core.Logging;
-using Umbraco.Core.Persistence.Migrations;
 
 namespace Our.Umbraco.DataAnnotations.Migrations
 {
@@ -32,12 +27,16 @@ namespace Our.Umbraco.DataAnnotations.Migrations
                 var latestMigration = migrations.OrderByDescending(x => x.Version).FirstOrDefault();
 
                 if (latestMigration != null)
+                {
                     currentVersion = latestMigration.Version;
+                }
 
                 var assemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
                 var targetVersion = new SemVersion(assemblyVersion);
                 if (targetVersion == currentVersion)
+                {
                     return;
+                }
 
                 var migrationsRunner = new MigrationRunner(
                   context.Services.MigrationEntryService,
