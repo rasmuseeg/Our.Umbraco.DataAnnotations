@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{3B4F9727-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{041121B7-58CC-451E-935E-32D5DBF5FEC2}"
 	ProjectSection(SolutionItems) = preProject
-		..\appveyor.yml = ..\appveyor.yml
+		..\azure-pipelines.yml = ..\azure-pipelines.yml
 		..\build\Gruntfile.js = ..\build\Gruntfile.js
 		..\build\pack.ps1 = ..\build\pack.ps1
 		..\build\package.json = ..\build\package.json
