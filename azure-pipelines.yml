@@ -16,20 +16,17 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: NuGetToolInstaller@1
-  displayName: 'Download nuget installer'
-
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   displayName: 'Restore solution'
   inputs:
-    restoreSolution: '$(solution)'
+    command: 'restore'
+    projects: '$(solution)'
 
-- task: MSBuild@1
-  displayName: 'Build solution - $(buildConfiguration) for $(buildPlatform)'
+- task: DotNetCoreCLI@2
+  displayName: 'Build solution'
   inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: 'build'
+    projects: '$(solution)'
 
 - task: YarnInstaller@3
   displayName: 'Download yarn installer'
