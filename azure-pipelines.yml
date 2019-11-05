@@ -11,7 +11,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
+  solution: 'src/Our.Umbraco.DataAnnotations/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
@@ -22,12 +22,11 @@ steps:
     command: 'restore'
     projects: '$(solution)'
 
-- task: VSBuild@1
-  displayName: 'Build using Visual Studio'
+- task: DotNetCoreCLI@2
+  displayName: 'Build solution'
   inputs:
-    solution: '$(solution)'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: 'build'
+    projects: '$(solution)'
 
 - task: YarnInstaller@3
   displayName: 'Download yarn installer'
