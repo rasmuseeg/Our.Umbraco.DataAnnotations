@@ -20,7 +20,7 @@ namespace Our.Umbraco.DataAnnotations
         public string MinPasswordLengthDictionaryKey { get; set; } = "MinPasswordLengthError";
         public string MinNonAlphanumericCharactersDictionaryKey { get; set; } = "MinPasswordLengthError";
         public string PasswordStrengthDictionaryKey { get; set; } = "MinPasswordLengthError";
-        public int? PasswordStrengthRegexTimeout { get; set; }
+        public new int? PasswordStrengthRegexTimeout { get; set; }
         public string ValidationName = "password";
 
         public UmbracoPasswordAttribute()
