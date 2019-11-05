@@ -67,6 +67,7 @@ module.exports = function(grunt) {
                 dest: releaseDir + 'nuget/',
                 options: {
                     version: pkg.version,
+                    symbols: true,
                     properties: 'Platform=AnyCPU;Configuration=Release'
                 }
             }
