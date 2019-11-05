@@ -1,16 +1,16 @@
 {
   "name": "Our.Umbraco.DataAnnotations",
-  "version": "1.3.1",
+  "version": "2.0.0-alpha",
   "url": "https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations/blob/master-v7/LICENSE.md"
+      "url": "https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations/blob/master-v8/LICENSE.md"
     }
   ],
   "author": {
     "name": "Rasmus Moeller",
-    "url": "https://rasmus-moller.dk/"
+    "url": "https://bitflipping.net/"
   },
   "readme": "Collection of validation attributes for your models, using umbraco dictionary as the resource.",
   "devDependencies": {
