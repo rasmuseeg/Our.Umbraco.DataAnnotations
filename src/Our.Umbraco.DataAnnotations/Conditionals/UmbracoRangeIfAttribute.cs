@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Our.Umbraco.DataAnnotations.Conditional
+namespace Our.Umbraco.DataAnnotations.Conditionals
 {
-    public class RangeIfAttribute : ConditionalValidationAttribute
+    public sealed class UmbracoRangeIfAttribute : ConditionalValidationAttribute
     {
         private readonly int minimum;
         private readonly int maximum;
@@ -13,7 +13,7 @@ namespace Our.Umbraco.DataAnnotations.Conditional
             get { return "rangeif"; }
         }
 
-        public RangeIfAttribute(int minimum, int maximum, string dependentProperty, object targetValue)
+        public UmbracoRangeIfAttribute(int minimum, int maximum, string dependentProperty, object targetValue)
             : base(new RangeAttribute(minimum, maximum), dependentProperty, targetValue)
         {
             this.minimum = minimum;

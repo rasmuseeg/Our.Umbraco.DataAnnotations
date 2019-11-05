@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace Our.Umbraco.DataAnnotations.Conditional
+namespace Our.Umbraco.DataAnnotations.Conditionals
 {
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false)]
     public abstract class ConditionalValidationAttribute : ValidationAttribute, IClientValidatable

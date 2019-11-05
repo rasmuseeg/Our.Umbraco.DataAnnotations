@@ -1,105 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C808941C-0685-4F06-80CE-81AE4E8B82E3}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Our.Umbraco.DataAnnotations</RootNamespace>
+    <TargetFramework>net472</TargetFramework>
     <AssemblyName>Our.Umbraco.DataAnnotations</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <RootNamespace>Our.Umbraco.DataAnnotations</RootNamespace>
+    <Version>2.0.0-alpha</Version>
+    <Copyright />
+    <Description>Contains validation attributes to decorate your classes, but using umbraco dictionary as the resource.</Description>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Security" />
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Http" />
+    <Reference Include="System.Web.Mvc" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Conditional\ConditionalValidationAttribute.cs" />
-    <Compile Include="Conditional\RangeIfAttribute.cs" />
-    <Compile Include="Conditional\RegularExpressionIfAttribute.cs" />
-    <Compile Include="Conditional\RequiredIfAttribute.cs" />
-    <Compile Include="Config.cs" />
-    <Compile Include="Constants.cs" />
-    <Compile Include="Interfaces\IUmbracoValidationAttribute.cs" />
-    <Compile Include="Migrations\CreateDictionaryKeys.cs" />
-    <Compile Include="Migrations\Runner.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UmbracoCompareAttribute.cs" />
-    <Compile Include="UmbracoDictionary.cs" />
-    <Compile Include="UmbracoDisplayNameAttribute.cs" />
-    <Compile Include="UmbracoEmailAddressAttribute.cs" />
-    <Compile Include="UmbracoMaxLengthAttribute.cs" />
-    <Compile Include="UmbracoMinLengthAttribute.cs" />
-    <Compile Include="UmbracoMustBeTrueAttribute.cs" />
-    <Compile Include="UmbracoPasswordAttribute.cs" />
-    <Compile Include="UmbracoRangeAttribute.cs" />
-    <Compile Include="UmbracoRegularExpressionAttribute.cs" />
-    <Compile Include="UmbracoRequiredAttribute.cs" />
-    <Compile Include="UmbracoStringLengthAttribute.cs" />
+    <PackageReference Include="UmbracoCms.Core" Version="8.1.0" />
+    <PackageReference Include="UmbracoCms.Web" Version="8.1.0" />
   </ItemGroup>
+
   <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
+    <Folder Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Our.Umbraco.DataAnnotations.nuspec" />
-    <None Include="Scripts\jquery.validation.conditional.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\jquery.validation.custom.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\jquery.validation.globalize.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="System.ComponentModel">
-      <Version>4.3.0</Version>
-    </PackageReference>
-    <PackageReference Include="System.ComponentModel.Annotations">
-      <Version>4.5.0</Version>
-    </PackageReference>
-    <PackageReference Include="UmbracoCms.Core">
-      <Version>8.0.0</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Scripts\jquery.cldr.es5.js" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+
 </Project>

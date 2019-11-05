@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Our.Umbraco.DataAnnotations.Conditional
+namespace Our.Umbraco.DataAnnotations.Conditionals
 {
-    public class RequiredIfAttribute : ConditionalValidationAttribute
+    public sealed class UmbracoRequiredIfAttribute : ConditionalValidationAttribute
     {
         protected override string ValidationName
         {
             get { return "requiredif"; }
         }
 
-        public RequiredIfAttribute(string dependentProperty, object targetValue)
+        public UmbracoRequiredIfAttribute(string dependentProperty, object targetValue)
             : base(new RequiredAttribute(), dependentProperty, targetValue)
         {
         }

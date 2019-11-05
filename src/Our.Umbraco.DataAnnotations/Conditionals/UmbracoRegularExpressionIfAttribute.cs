@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Our.Umbraco.DataAnnotations.Conditional
+namespace Our.Umbraco.DataAnnotations.Conditionals
 {
-    public class RegularExpressionIfAttribute : ConditionalValidationAttribute
+    public sealed class UmbracoRegularExpressionIfAttribute : ConditionalValidationAttribute
     {
         private readonly string pattern;
         protected override string ValidationName
@@ -11,7 +11,7 @@ namespace Our.Umbraco.DataAnnotations.Conditional
             get { return "regularexpressionif"; }
         }
 
-        public RegularExpressionIfAttribute(string pattern, string dependentProperty, object targetValue)
+        public UmbracoRegularExpressionIfAttribute(string pattern, string dependentProperty, object targetValue)
             : base(new RegularExpressionAttribute(pattern), dependentProperty, targetValue)
         {
             this.pattern = pattern;
