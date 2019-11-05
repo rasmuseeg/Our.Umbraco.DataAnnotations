@@ -13,7 +13,7 @@ namespace Our.Umbraco.DataAnnotations
                 return key;
             }
 
-            return string.Format(Config.DictionaryFallbackFormat, dictionaryKey); // Fallback with the key name
+            return string.Format(Config.DictionaryFallbackFormat, dictionaryKey);
         }
     }
 }
