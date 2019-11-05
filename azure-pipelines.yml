@@ -25,7 +25,7 @@ steps:
     restoreSolution: '$(solution)'
 
 - task: MSBuild@1
-displayName: 'Build solution - $(buildConfiguration) for $(buildPlatform)'
+  displayName: 'Build solution - $(buildConfiguration) for $(buildPlatform)'
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
