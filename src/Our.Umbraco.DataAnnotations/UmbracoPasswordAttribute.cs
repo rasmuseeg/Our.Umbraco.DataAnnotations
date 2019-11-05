@@ -26,10 +26,10 @@ namespace Our.Umbraco.DataAnnotations
         public UmbracoPasswordAttribute()
             : base()
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
-            MinPasswordLengthError = UmbracoDictionary.GetDictionaryValue(MinPasswordLengthDictionaryKey);
-            MinNonAlphanumericCharactersError = UmbracoDictionary.GetDictionaryValue(MinNonAlphanumericCharactersDictionaryKey);
-            PasswordStrengthError = UmbracoDictionary.GetDictionaryValue(PasswordStrengthDictionaryKey);
+            ErrorMessage = UmbracoDictionary.DictionaryValue(DictionaryKey);
+            MinPasswordLengthError = UmbracoDictionary.DictionaryValue(MinPasswordLengthDictionaryKey);
+            MinNonAlphanumericCharactersError = UmbracoDictionary.DictionaryValue(MinNonAlphanumericCharactersDictionaryKey);
+            PasswordStrengthError = UmbracoDictionary.DictionaryValue(PasswordStrengthDictionaryKey);
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)

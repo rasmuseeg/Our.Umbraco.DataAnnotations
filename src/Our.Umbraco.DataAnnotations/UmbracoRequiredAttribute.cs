@@ -19,7 +19,7 @@ namespace Our.Umbraco.DataAnnotations
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
+            ErrorMessage = UmbracoDictionary.DictionaryValue(DictionaryKey);
             yield return new ModelClientValidationRequiredRule(FormatErrorMessage(metadata.GetDisplayName()));
         }
     }

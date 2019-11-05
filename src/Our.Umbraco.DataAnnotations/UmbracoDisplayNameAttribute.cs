@@ -17,7 +17,7 @@ namespace Our.Umbraco.DataAnnotations
         {
             get
             {
-                return UmbracoDictionary.GetDictionaryValue(DictionaryKey);
+                return UmbracoDictionary.DictionaryValue(DictionaryKey);
             }
         }
     }

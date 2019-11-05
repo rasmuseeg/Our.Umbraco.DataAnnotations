@@ -13,7 +13,7 @@ namespace Our.Umbraco.DataAnnotations
 
         public UmbracoMustBeTrueAttribute()
         {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
+            ErrorMessage = UmbracoDictionary.DictionaryValue(DictionaryKey);
         }
 
         public override bool IsValid(object value)
