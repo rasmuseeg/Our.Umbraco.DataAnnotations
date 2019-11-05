@@ -22,11 +22,12 @@ steps:
     command: 'restore'
     projects: '$(solution)'
 
-- task: DotNetCoreCLI@2
-  displayName: 'Build solution'
+- task: VSBuild@1
+  displayName: 'Build using Visual Studio'
   inputs:
-    command: 'build'
-    projects: '$(solution)'
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
 - task: YarnInstaller@3
   displayName: 'Download yarn installer'
