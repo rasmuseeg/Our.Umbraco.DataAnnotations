@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Our.Umbraco.DataAnnotations.Interfaces;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -7,7 +8,7 @@ namespace Our.Umbraco.DataAnnotations
     /// <summary>
     /// Specifies that a data field value must be a valid Email Address
     /// </summary>
-    public class UmbracoEmailAddressAttribute : RegularExpressionAttribute, IClientValidatable
+    public sealed class UmbracoEmailAddressAttribute : RegularExpressionAttribute, IClientValidatable, IUmbracoValidationAttribute
     {
         public string DictionaryKey { get; set; } = "EmailError";
 
