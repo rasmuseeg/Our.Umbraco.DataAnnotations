@@ -6,6 +6,8 @@
 trigger:
 - master-v8
 - dev-v8
+- release/*
+- feature/*
 
 pool:
   vmImage: 'windows-latest'
