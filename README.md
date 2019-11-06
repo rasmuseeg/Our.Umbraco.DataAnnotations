@@ -1,6 +1,6 @@
 | Branch  | Status | 
 |:--------|:-------|
-| master-v8 |  |
+| master-v8 | [![Build Status](https://dev.azure.com/bitflipping/Our.Umbraco.DataAnnotations/_apis/build/status/rasmuseeg.Our.Umbraco.DataAnnotations?branchName=master-v8)](https://dev.azure.com/bitflipping/Our.Umbraco.DataAnnotations/_build/latest?definitionId=9&branchName=master-v8) |
 | dev-v8 | [![Build Status](https://dev.azure.com/bitflipping/Our.Umbraco.DataAnnotations/_apis/build/status/rasmuseeg.Our.Umbraco.DataAnnotations?branchName=dev-v8)](https://dev.azure.com/bitflipping/Our.Umbraco.DataAnnotations/_build/latest?definitionId=9&branchName=dev-v8) |
 
 # Our.Umbraco.DataAnotations
