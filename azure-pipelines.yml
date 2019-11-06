@@ -27,7 +27,7 @@ steps:
   inputs:
     command: 'build'
     projects: '$(solution)'
-    configuration: '$(buildConfiguration)'
+    arguments: '-c $(buildConfiguration)'
 
 - task: YarnInstaller@3
   displayName: 'Download yarn installer'
