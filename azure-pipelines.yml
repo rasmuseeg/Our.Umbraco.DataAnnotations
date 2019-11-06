@@ -29,6 +29,13 @@ steps:
     projects: '$(solution)'
     arguments: '-c $(buildConfiguration)'
 
+- task: DotNetCoreCLI@2
+  displayName: 'Dotnet pack'
+  inputs:
+    command: 'pack'
+    projects: '$(solution)'
+    arguments: '-c $(buildConfiguration) --include-symbols --output .\build\$(buildConfiguration)\nuget'
+
 - task: YarnInstaller@3
   displayName: 'Download yarn installer'
   inputs:
@@ -50,7 +57,7 @@ steps:
   displayName: 'Copy files to staging directory'
   inputs:
     sourceFolder: '$(Build.SourcesDirectory)'
-    contents: 'build/$(BuildConfiguration)/**'
+    contents: 'build/$(buildConfiguration)/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1

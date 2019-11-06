@@ -60,27 +60,15 @@ module.exports = function(grunt) {
                     outputName: pkg.name + '.' + pkg.version + '.zip'
                 }
             }
-        },
-        nugetpack: {
-            dist: {
-                src: projectDir + pkg.name + '.csproj',
-                dest: releaseDir + 'nuget/',
-                options: {
-                    version: pkg.version,
-                    symbols: true,
-                    properties: 'Platform=AnyCPU;Configuration=Release'
-                }
-            }
         }
     });
 
     grunt.loadNpmTasks('grunt-umbraco-package');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-nuget');
     grunt.loadNpmTasks('grunt-zip');
 
-    grunt.registerTask('dev', ['clean', 'copy', 'zip', 'umbracoPackage', 'nugetpack']);
+    grunt.registerTask('dev', ['clean', 'copy', 'zip', 'umbracoPackage']);
 
     grunt.registerTask('default', ['dev']);
 
