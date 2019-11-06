@@ -34,10 +34,11 @@ steps:
   displayName: 'Dotnet pack'
   inputs:
     command: 'pack'
+    projects: |
+      $(solution)
     includesymbols: true
     configuration: '$(buildConfiguration)'
     nobuild: true
-    projects: '$(solution)'
     outputDir: '.\build\$(buildConfiguration)\nuget'
     arguments: '--no-restore'
 
