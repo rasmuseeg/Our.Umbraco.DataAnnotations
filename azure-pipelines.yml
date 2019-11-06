@@ -29,8 +29,7 @@ steps:
   inputs:
     command: 'build'
     projects: '$(solution)'
-    configuration: '$(buildConfiguration)'
-    arguments: '--no-restore'
+    arguments: '--configuration $(buildConfiguration) --no-restore'
 
 - task: DotNetCoreCLI@2
   displayName: 'Dotnet pack'
