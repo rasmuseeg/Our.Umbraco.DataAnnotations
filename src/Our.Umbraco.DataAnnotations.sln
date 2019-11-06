@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29403.142
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.DataAnnotations", "Our.Umbraco.DataAnnotations\Our.Umbraco.DataAnnotations.csproj", "{C808941C-0685-4F06-80CE-81AE4E8B82E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Our.Umbraco.DataAnnotations", "Our.Umbraco.DataAnnotations\Our.Umbraco.DataAnnotations.csproj", "{C808941C-0685-4F06-80CE-81AE4E8B82E3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{3B4F9727-3AEB-4113-90F8-8006C575347C}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,10 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{041121B7
 	ProjectSection(SolutionItems) = preProject
 		..\azure-pipelines.yml = ..\azure-pipelines.yml
 		..\build\Gruntfile.js = ..\build\Gruntfile.js
-		..\build\pack.ps1 = ..\build\pack.ps1
 		..\build\package.json = ..\build\package.json
 		..\README.md = ..\README.md
-		..\build\restore.ps1 = ..\build\restore.ps1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmbracoCms", "UmbracoCms\UmbracoCms.csproj", "{03A5C03C-2BF9-4EF5-9473-867F2D31BFC6}"

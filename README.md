@@ -1,12 +1,12 @@
 | Branch  | Status | 
 |:--------|:-------|
-| master-v7  | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/master-v7?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/master-v7) |
-| dev-v7 | [![Build status](https://ci.appveyor.com/api/projects/status/45focfae616jwy59/branch/dev-v7?svg=true)](https://ci.appveyor.com/project/rasmuseeg/our-umbraco-dataannotations/branch/dev-v7) |
+| master-v8 |  |
+| dev-v8 | [![Build Status](https://dev.azure.com/bitflipping/Our.Umbraco.DataAnnotations/_apis/build/status/rasmuseeg.Our.Umbraco.DataAnnotations?branchName=dev-v8)](https://dev.azure.com/bitflipping/Our.Umbraco.DataAnnotations/_build/latest?definitionId=9&branchName=dev-v8) |
 
 # Our.Umbraco.DataAnotations
 Contains model validation attributes to for your properties, by using umbraco dictionary as the resource for error messages.
 
-This branch is for Umbraco 7. [Looking for Umbraco 8?](https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations/tree/dev-v8)
+This branch is for Umbraco 8. [Looking for Umbraco 7?](https://github.com/rasmuseeg/Our.Umbraco.DataAnnotations/tree/dev-v7)
 
 ## Installation
 During installation the keys will be created nested below `DataAnnotions` dictionary key.
