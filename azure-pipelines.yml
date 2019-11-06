@@ -20,32 +20,27 @@ variables:
 
 steps:
 - task: DotNetCoreCLI@2
-  displayName: 'Restore solution'
+  displayName: 'Restore'
   inputs:
     command: 'restore'
     projects: '$(solution)'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Build solution'
+  displayName: 'Build'
   inputs:
     command: 'build'
     projects: '$(solution)'
     arguments: '--configuration $(buildConfiguration) --no-restore'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Dotnet pack'
+  displayName: 'Nuget Pack'
   inputs:
-    command: 'pack'
-    packagesToPack: '$(solution)'
-    nobuild: true
-    includesymbols: true
-    versioningScheme: 'byEnvVar'
-    versionEnvVar: '$(packageVersion)'
-    configuration: '$(buildConfiguration)'
-    outputDir: '.\build\$(buildConfiguration)\nuget'
+    command: 'custom'
+    custom: 'pack'
+    arguments: '$(solution) --configuration $(buildConfiguration) --include-symbols --no-build --no-restore --output build/$(buildConfiguration)/nuget'
 
 - task: YarnInstaller@3
-  displayName: 'Download yarn installer'
+  displayName: 'Download yarn'
   inputs:
     versionSpec: '1.x'
 
