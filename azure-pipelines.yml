@@ -16,6 +16,7 @@ variables:
   solution: 'src/Our.Umbraco.DataAnnotations/Our.Umbraco.DataAnnotations.csproj'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  version: '2.0.0-alpha'
 
 steps:
 - task: DotNetCoreCLI@2
@@ -35,13 +36,13 @@ steps:
   displayName: 'Dotnet pack'
   inputs:
     command: 'pack'
-    projects: |
-      $(solution)
-    includesymbols: true
-    configuration: '$(buildConfiguration)'
+    packagesToPack: '$(solution)'
     nobuild: true
+    includesymbols: true
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: '$(packageVersion)'
+    configuration: '$(buildConfiguration)'
     outputDir: '.\build\$(buildConfiguration)\nuget'
-    arguments: '--no-restore'
 
 - task: YarnInstaller@3
   displayName: 'Download yarn installer'
