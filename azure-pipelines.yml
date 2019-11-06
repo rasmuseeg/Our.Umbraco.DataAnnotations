@@ -27,14 +27,19 @@ steps:
   inputs:
     command: 'build'
     projects: '$(solution)'
-    arguments: '--configuration $(buildConfiguration) --no-restore'
+    configuration: '$(buildConfiguration)'
+    arguments: '--no-restore'
 
 - task: DotNetCoreCLI@2
   displayName: 'Dotnet pack'
   inputs:
     command: 'pack'
+    includesymbols: true
+    configuration: '$(buildConfiguration)'
+    nobuild: true
     projects: '$(solution)'
-    arguments: '--configuration $(buildConfiguration) --no-restore --no-build --include-symbols --output .\build\$(buildConfiguration)\nuget'
+    outputDir: '.\build\$(buildConfiguration)\nuget'
+    arguments: '--no-restore'
 
 - task: YarnInstaller@3
   displayName: 'Download yarn installer'
