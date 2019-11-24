@@ -10,7 +10,6 @@ namespace Our.Umbraco.DataAnnotations
     public sealed class UmbracoCompareAttribute : System.ComponentModel.DataAnnotations.CompareAttribute, IClientValidatable, IUmbracoValidationAttribute
     {
         public string DictionaryKey { get; set; } = "EqualToError";
-        public new string ErrorMessageString { get; set; }
         public new string OtherPropertyDisplayName { get; set; }
 
         public UmbracoCompareAttribute(string otherProperty)
@@ -20,7 +19,7 @@ namespace Our.Umbraco.DataAnnotations
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
-            ErrorMessageString = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
 
             if (metadata.ContainerType != null)
             {
