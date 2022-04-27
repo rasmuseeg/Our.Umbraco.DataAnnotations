@@ -11,10 +11,6 @@ namespace Our.Umbraco.DataAnnotations
     {
         public string DictionaryKey { get; set; } = "MustBeTrueError";
 
-        public UmbracoMustBeTrueAttribute()
-        {
-            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
-        }
 
         public override bool IsValid(object value)
         {
@@ -23,6 +19,8 @@ namespace Our.Umbraco.DataAnnotations
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
+            ErrorMessage = UmbracoDictionary.GetDictionaryValue(DictionaryKey);
+
             var rule = new ModelClientValidationRule()
             {
                 ValidationType = "mustbetrue",
